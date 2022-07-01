@@ -30,7 +30,7 @@ namespace MyGame
             {
                 System.Console.WriteLine($"Enemy {i+1}'s name is {enemyArray[i].GetName()}");
             }
-
+            System.Console.WriteLine("Obrigado por usar este programa!");
         }
     }
 }
