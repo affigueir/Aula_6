@@ -7,7 +7,7 @@ namespace MyGame
 
         public Enemy(string name)
         {
-            this.name = name;
+            this.name = SetName(name);
             health = 100;
             shield = 0;
         }   
@@ -27,6 +27,16 @@ namespace MyGame
                 health -= damageStillToInflict;
                 if (health < 0) health = 0;
             }
+        }
+
+        public float GetHealth() => health;
+        public float GetShield() => shield;
+
+        public string SetName(string name)
+        {
+            this.name = name;
+            name = name.Replace(" ", ""); 
+            return name;
         }
     }
 }

@@ -6,7 +6,10 @@ namespace MyGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Enemy trump = new Enemy("               Trump   ");
+            trump.SetName("   Donald    Trump   ");        
+
+            System.Console.WriteLine($"Name is {trump.GetName()} and HP is {trump.GetHealth()}");
         }
     }
 }
