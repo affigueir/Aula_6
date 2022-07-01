@@ -12,10 +12,9 @@ namespace MyGame
             shield = 0;
         }   
 
-        public string GetName()
-        {
-            return name;
-        }
+        public string GetName() => name;
+        public float GetHealth() => health;
+        public float GetShield() => shield;
 
         public void TakeDamage(float damage)
         {
@@ -29,14 +28,25 @@ namespace MyGame
             }
         }
 
-        public float GetHealth() => health;
-        public float GetShield() => shield;
-
         public string SetName(string name)
         {
-            this.name = name;
-            name = name.Replace(" ", ""); 
+            this.name = name.Trim(); 
             return name;
         }
+
+        public void PickPowerUp(PowerUp powerUp, float value)
+        {
+            if (powerUp == PowerUp.Health)
+            {
+                health += value;
+                if (health > 100) health = 100;
+            }
+            else
+            {
+                shield += value;
+                if (shield > 100) shield = 100;
+            }
+        }
+
     }
 }
